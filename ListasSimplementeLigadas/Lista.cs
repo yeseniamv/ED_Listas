@@ -67,5 +67,19 @@ namespace ListasSimplementeLigadas
             }
             return null;
         }
+
+        public void AgregarInicio(string valor)
+        {
+            //creamos nuevo nodo
+
+            nodoActual = nodoInicial;
+            Nodo nodoNuevo = new Nodo(valor);
+            //conectamos nuevo nodo al primer nodo de la lista
+            nodoNuevo.Siguiente = nodoActual.Siguiente;
+            //conectamos nodo inicial con nodo nuevo
+            nodoInicial.Siguiente = nodoNuevo;
+
+
+        }
     }
 }
