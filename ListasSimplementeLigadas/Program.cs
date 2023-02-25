@@ -28,7 +28,7 @@ namespace ListasSimplementeLigadas
             Console.ReadKey();
 
             //agregamos al inicio
-            list.AgregarInicio("Nuevo primero");
+            list.AgregarInicio("Nuevo primero"); 
             Console.WriteLine(list.Recorrer());
             Console.ReadKey();
 
