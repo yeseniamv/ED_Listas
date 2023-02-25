@@ -61,5 +61,20 @@ namespace ListaCircular
             //ligamos el ultimo nodo encontrado con el recien creado
             trabajo.Siguiente = temp;
         }
+
+        //vaciar la lista
+        public void Vaciar()
+        {
+            ancla.Siguiente = null;//se aprovecha el recolector de basura y los elemento se eliminan
+        }
+
+        //indica si la lista esta vacia o no
+        public bool EstaVacio()
+        {
+            if (ancla.Siguiente == null)
+                return true;
+            else
+                return false;
+        }
     }
 }
