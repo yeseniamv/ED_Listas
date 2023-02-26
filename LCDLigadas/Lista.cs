@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LDLigadas
+namespace LCDLigadas
 {
     internal class Lista
     {
@@ -15,7 +15,7 @@ namespace LDLigadas
         public Lista()
         {
             nodoInicial = new Nodo();
-            
+
 
         }
         public bool ValidaVacio()
@@ -54,10 +54,15 @@ namespace LDLigadas
             Nodo nodoNuevo = new Nodo(valor);
             //colocar el nuevo nodo al final de la lista
             nodoActual.Siguiente = nodoNuevo;
+            
             //definir el nuevo nodo final de la lista
             nodoFinal = nodoNuevo;
             //enlazar el nuevo nodo con su anterior
             nodoNuevo.Anterior = nodoActual;
+            //enlazamos nuevo nodo final con nodo incial
+            nodoNuevo.Final = nodoInicial.Siguiente;
+            //eliminamos coneccion del anterior ultimo nodo con el comienzo de la lista
+            nodoActual.Final = null;
         }
         public String Buscar(string valor)
         {
@@ -84,7 +89,7 @@ namespace LDLigadas
 
         public void AgregarInicio(string valor)
         {
-            
+
 
             nodoExtra = nodoInicial.Siguiente;
             //creamos nuevo nodo
@@ -97,7 +102,9 @@ namespace LDLigadas
             nodoExtra.Anterior = nodoNuevo;
             //conectamos nuevo nodo al primer nodo de la lista
             nodoNuevo.Siguiente = nodoExtra;
-            
+            //se redefine la coneccion del final con el nuevo inicial
+            nodoFinal.Final = nodoNuevo;
+
 
 
 
@@ -116,11 +123,14 @@ namespace LDLigadas
             nodoActual.Siguiente = null;
             //quitamos conexion del ultimo nodo con el anterior
             nodoFinal.Anterior = null;
+            //se borra coneccion del anterior final con el inicial
+            nodoFinal.Final = null;
             //usamos el nodo de apoyo para redefinir quien es el nodo final
             nodoFinal = nodoActual;
+            //se hace coneccion del nuevo final con el inicial
+            nodoFinal.Final = nodoInicial.Siguiente;
 
-
-            }
+        }
 
         //borrar al inicio
         public void BorrarInicio()
@@ -139,10 +149,12 @@ namespace LDLigadas
             nodoInicial.Siguiente = nodoActual;
             //conectamos el nodo de segunda posicion con el comienzo
             nodoActual.Anterior = nodoInicial;
-            
+
             //eliminamos conexiones del primer nodo
             nodoExtra.Siguiente = null;
             nodoExtra.Anterior = null;
+            //reconectamos nodo final con el nuevo primer nodo
+            nodoFinal.Final = nodoActual;
 
 
         }

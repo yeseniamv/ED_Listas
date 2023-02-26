@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListasCirculares", "ListasC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LDLigadas", "LDLigadas\LDLigadas.csproj", "{F07D860B-DB5E-4616-A969-8187C1692441}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCDLigadas", "LCDLigadas\LCDLigadas.csproj", "{CE8216E0-E694-49F0-B832-86BDE44DE8E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F07D860B-DB5E-4616-A969-8187C1692441}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F07D860B-DB5E-4616-A969-8187C1692441}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F07D860B-DB5E-4616-A969-8187C1692441}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE8216E0-E694-49F0-B832-86BDE44DE8E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE8216E0-E694-49F0-B832-86BDE44DE8E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE8216E0-E694-49F0-B832-86BDE44DE8E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE8216E0-E694-49F0-B832-86BDE44DE8E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
