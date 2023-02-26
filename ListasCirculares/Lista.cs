@@ -10,6 +10,7 @@ namespace ListasCirculares
     {
         Nodo nodoInicial;
         Nodo nodoActual;
+        Nodo nodoAtras;
         public Lista()
         {
             nodoInicial = new Nodo();
@@ -17,10 +18,9 @@ namespace ListasCirculares
         public bool ValidaVacio()
         {
             if (nodoInicial.Siguiente == null)
-            {
                 return true;
-            }
-            return false;
+            else
+                return false;
             //return nodoInicial.Siguiente == null;
 
         }
@@ -51,10 +51,9 @@ namespace ListasCirculares
         }
         public Nodo Buscar(string valor)
         {
-            if (ValidaVacio())
-            {
+            if (ValidaVacio() == true)
                 return null;
-            }
+            
             nodoActual = nodoInicial;
             while (nodoActual.Siguiente != null)
             {
@@ -86,26 +85,40 @@ namespace ListasCirculares
         //borrar ultimo agregado
         public void Borrar()
         {
-            nodoActual = nodoInicial;
+            if (ValidaVacio() == true)
+                return ;
+            
 
-            while (nodoActual.Siguiente.Siguiente != null)
+            nodoAtras = nodoInicial;
+            nodoActual = nodoInicial.Siguiente;
+
+            while (nodoActual.Siguiente != null)
             {
+                nodoAtras = nodoActual;
                 nodoActual = nodoActual.Siguiente;
             }
             
-            nodoActual.Siguiente = null;
+            nodoAtras.Siguiente = null;
+            
         }
 
         //borrar al inicio
         public void BorrarInicio()
         {
-            //colocamos nodo actual al inicio
-            nodoActual = nodoInicial;
+            if (ValidaVacio() == true)
+                return;
+            //colocamos nodo atras al inicio
+            nodoAtras = nodoInicial.Siguiente;
             //avansamos dos espacios
-            nodoActual.Siguiente = nodoActual;
-            nodoActual.Siguiente = nodoActual;
+            nodoActual = nodoInicial.Siguiente;
+            nodoActual = nodoActual.Siguiente;
+            
+           
+            
             //conectamos nuevo nodo al primer nodo de la lista
             nodoInicial.Siguiente = nodoActual;
+            //eliminamos el primer nodo
+            nodoAtras.Siguiente = null;
 
 
         }

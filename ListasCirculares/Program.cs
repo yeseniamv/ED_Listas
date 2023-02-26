@@ -21,28 +21,29 @@ namespace ListasCirculares
 
             //probamos recorrer
             Console.WriteLine(list.Recorrer());
-            Console.ReadKey();
+            
 
             //buscamos un valor y mostramos su posicion
-            Console.WriteLine(list.Buscar("Segundo"));
-            Console.ReadKey();
+            //Console.WriteLine(list.Buscar("Segundo"));
+            //Console.ReadKey();
 
             //agregamos al inicio
             list.AgregarInicio("Nuevo primero");
             Console.WriteLine(list.Recorrer());
-            Console.ReadKey();
+
+            
 
             //borrar el ultimo de la lista
             list.Borrar();
             Console.WriteLine(list.Recorrer());
-            Console.ReadKey();
 
             //borrar el primero
             list.BorrarInicio();
             Console.WriteLine(list.Recorrer());
+
             Console.ReadKey();
 
-            
+
         }
     }
 

@@ -42,6 +42,26 @@ namespace ListaCircular
             Nodo encontrado = miLista.Buscar(7);
             Console.WriteLine(encontrado);
             Console.ReadKey();
+
+            //busqueda de indice
+            Console.WriteLine(miLista.Buscar(9));
+            Console.ReadKey();
+
+            //borrar dato
+            miLista.Borrar(10);
+            Console.ReadKey();
+
+            //insertar dato despues de otro ya existente
+            miLista.Insertar(7, 20);
+            Console.ReadKey();
+
+            //insertar elemento al inicio
+            miLista.InsertarInicio(13);
+            Console.ReadKey();
+
+            //obtiene un valor dando una posicion en el indice
+            Console.WriteLine(miLista.ObtenerPorIndice(4));
+            Console.ReadKey();
         }
     }
 }
