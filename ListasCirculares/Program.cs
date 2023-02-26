@@ -23,9 +23,9 @@ namespace ListasCirculares
             Console.WriteLine(list.Recorrer());
             
 
-            //buscamos un valor y mostramos su posicion
-            //Console.WriteLine(list.Buscar("Segundo"));
-            //Console.ReadKey();
+            //buscamos un valor y mostramos su posicion en la lista de nodos
+            Console.WriteLine(list.Buscar("Segundo"));
+            Console.ReadKey();
 
             //agregamos al inicio
             list.AgregarInicio("Nuevo primero");

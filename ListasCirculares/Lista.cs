@@ -49,18 +49,23 @@ namespace ListasCirculares
             Nodo nodoNuevo = new Nodo(valor);
             nodoActual.Siguiente = nodoNuevo;
         }
-        public Nodo Buscar(string valor)
+        public String Buscar(string valor)
         {
             if (ValidaVacio() == true)
                 return null;
-            
+
+            int indice = 0;
+            string indicen = "";
             nodoActual = nodoInicial;
             while (nodoActual.Siguiente != null)
             {
                 nodoActual = nodoActual.Siguiente;
+                indice++;
+                indicen = indice.ToString();
                 if (nodoActual.Valor == valor)
                 {
-                    return nodoActual;
+                    
+                    return indicen;
                 }
 
             }
