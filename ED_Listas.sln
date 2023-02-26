@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListasSimplementeLigadas", "ListasSimplementeLigadas\ListasSimplementeLigadas.csproj", "{A048D03C-92C1-46A2-987B-2D270DEDFD16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListaCircular-prueba", "ListaCircular\ListaCircular-prueba.csproj", "{B5F21C91-CD1A-4015-A532-4019CDBBDAC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListaCircular", "ListaCircular\ListaCircular.csproj", "{B5F21C91-CD1A-4015-A532-4019CDBBDAC9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListasCirculares", "ListasCirculares\ListasCirculares.csproj", "{5BA81175-847C-410B-8CE4-E8093D491EA6}"
 EndProject

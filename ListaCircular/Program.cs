@@ -37,6 +37,11 @@ namespace ListaCircular
             miLista.Recorrer();
 
             Console.ReadKey();
+
+            //activar metodo de busqueda
+            Nodo encontrado = miLista.Buscar(7);
+            Console.WriteLine(encontrado);
+            Console.ReadKey();
         }
     }
 }

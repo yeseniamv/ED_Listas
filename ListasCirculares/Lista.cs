@@ -82,6 +82,34 @@ namespace ListasCirculares
 
         }
 
+        
+        //borrar ultimo agregado
+        public void Borrar()
+        {
+            nodoActual = nodoInicial;
+
+            while (nodoActual.Siguiente.Siguiente != null)
+            {
+                nodoActual = nodoActual.Siguiente;
+            }
+            
+            nodoActual.Siguiente = null;
+        }
+
+        //borrar al inicio
+        public void BorrarInicio()
+        {
+            //colocamos nodo actual al inicio
+            nodoActual = nodoInicial;
+            //avansamos dos espacios
+            nodoActual.Siguiente = nodoActual;
+            nodoActual.Siguiente = nodoActual;
+            //conectamos nuevo nodo al primer nodo de la lista
+            nodoInicial.Siguiente = nodoActual;
+
+
+        }
+
 
     }
 

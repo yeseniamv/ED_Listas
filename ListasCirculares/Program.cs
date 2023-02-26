@@ -10,7 +10,7 @@ namespace ListasCirculares
     {
         static void Main(string[] args)
         {
-            Nodo nodo = new Nodo();
+            
             Lista list = new Lista();
 
 
@@ -24,7 +24,7 @@ namespace ListasCirculares
             Console.ReadKey();
 
             //buscamos un valor y mostramos su posicion
-            Console.WriteLine(list.Buscar("Primero"));
+            Console.WriteLine(list.Buscar("Segundo"));
             Console.ReadKey();
 
             //agregamos al inicio
@@ -32,6 +32,17 @@ namespace ListasCirculares
             Console.WriteLine(list.Recorrer());
             Console.ReadKey();
 
+            //borrar el ultimo de la lista
+            list.Borrar();
+            Console.WriteLine(list.Recorrer());
+            Console.ReadKey();
+
+            //borrar el primero
+            list.BorrarInicio();
+            Console.WriteLine(list.Recorrer());
+            Console.ReadKey();
+
+            
         }
     }
 

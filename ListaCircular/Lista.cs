@@ -76,5 +76,23 @@ namespace ListaCircular
             else
                 return false;
         }
+
+        //regresar el nodo con la primera ocurrencia del dato -> primero en encontrar
+        public Nodo Buscar(int pDato)
+        {
+            if (EstaVacio() == true)
+                return null;
+            trabajo2 = ancla;
+            //recorremos para ver si lo encontramos
+            while (trabajo2.Siguiente != null)
+            {
+                trabajo2 = trabajo2.Siguiente;
+                //al encontrarlo, lo regresamos
+                if(trabajo2.Dato == pDato)
+                    return trabajo2;
+            }
+            //si no se encuentra, regresamos null
+            return null;
+        }
     }
 }
