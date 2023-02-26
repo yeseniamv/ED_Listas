@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ListasCirculares
+namespace LDLigadas
 {
     internal class Lista
     {
         Nodo nodoInicial;
         Nodo nodoActual;
+        Nodo nodoFinal;
         Nodo nodoExtra;
-        
         public Lista()
         {
             nodoInicial = new Nodo();
+            
+
         }
         public bool ValidaVacio()
         {
@@ -48,7 +50,12 @@ namespace ListasCirculares
                 nodoActual = nodoActual.Siguiente;
             }
             Nodo nodoNuevo = new Nodo(valor);
+            //colocar el nuevo nodo al final de la lista
             nodoActual.Siguiente = nodoNuevo;
+            //definir nodo al final de la lista
+            nodoFinal = nodoActual.Siguiente;
+            //enlazar el nuevo nodo con su anterior
+            nodoNuevo.Anterior = nodoActual;
         }
         public String Buscar(string valor)
         {
@@ -65,7 +72,7 @@ namespace ListasCirculares
                 indicen = indice.ToString();
                 if (nodoActual.Valor == valor)
                 {
-                    
+
                     return indicen;
                 }
 
@@ -75,14 +82,21 @@ namespace ListasCirculares
 
         public void AgregarInicio(string valor)
         {
-            //creamos nuevo nodo
+            
 
-            nodoActual = nodoInicial;
+            nodoExtra = nodoInicial.Siguiente;
+            //creamos nuevo nodo
             Nodo nodoNuevo = new Nodo(valor);
-            //conectamos nuevo nodo al primer nodo de la lista
-            nodoNuevo.Siguiente = nodoActual.Siguiente;
             //conectamos nodo inicial con nodo nuevo
             nodoInicial.Siguiente = nodoNuevo;
+            //conectamos nodo nuevo con nodo inicial 
+            nodoNuevo.Anterior = nodoInicial;
+            //conectamos el anterior primer nodo de la lista al nuevo nodo
+            nodoExtra.Anterior = nodoNuevo;
+            //conectamos nuevo nodo al primer nodo de la lista
+            nodoNuevo.Siguiente = nodoExtra;
+            
+
 
 
         }
@@ -92,39 +106,41 @@ namespace ListasCirculares
         public void Borrar()
         {
             if (ValidaVacio() == true)
-                return ;
-            
+                return;
 
-            nodoExtra = nodoInicial;
-            nodoActual = nodoInicial.Siguiente;
+            //colocamos el nodo de apoyo sobre el nodo anterior al ultimo
+            nodoActual = nodoFinal.Anterior;
+            //quitamos coneccion del penultimo nodo con el ultimo
+            nodoActual.Siguiente = null;
+            //quitamos conexion del ultimo nodo con el anterior
+            nodoFinal.Anterior = null;
+            //usamos el nodo de apoyo para redefinir quien es el nodo final
+            nodoFinal = nodoActual;
 
-            while (nodoActual.Siguiente != null)
-            {
-                nodoExtra = nodoActual;
-                nodoActual = nodoActual.Siguiente;
+
             }
-            
-            nodoExtra.Siguiente = null;
-            
-        }
 
         //borrar al inicio
         public void BorrarInicio()
         {
             if (ValidaVacio() == true)
                 return;
-            //colocamos nodo atras al inicio
+            //colocamos nodo de apoyo al inicio
             nodoExtra = nodoInicial.Siguiente;
-            //avansamos dos espacios
+            //colocamos segundo nodo de apoyo despues de este
             nodoActual = nodoInicial.Siguiente;
             nodoActual = nodoActual.Siguiente;
-            
-           
-            
-            //conectamos nuevo nodo al primer nodo de la lista
+
+
+
+            //conectamos el comienzo en el nodo de la segunda posicion
             nodoInicial.Siguiente = nodoActual;
-            //eliminamos el primer nodo
+            //conectamos el nodo de segunda posicion con el comienzo
+            nodoActual.Anterior = nodoInicial;
+            
+            //eliminamos conexiones del primer nodo
             nodoExtra.Siguiente = null;
+            nodoExtra.Anterior = null;
 
 
         }
